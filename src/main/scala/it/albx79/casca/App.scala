@@ -8,7 +8,6 @@ import javax.imageio._
 import javax.swing._
 
 import java.io._
-//import java.awt.image._
 
 trait CliConfig {
   @Option(longName=Array("training")) 

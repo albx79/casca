@@ -35,7 +35,7 @@ object CV {
     val tmp = new BufferedImage(input.getWidth, input.getHeight, BufferedImage.TYPE_INT_RGB)
     tmp.createGraphics.drawImage(input, new AffineTransform, null)    
     if (width > 0) {
-      val blurOp = new ConvolveOp(new Kernel(width, width, getCircularKernel(width)), ConvolveOp.EDGE_ZERO_FILL, null)
+      val blurOp = new ConvolveOp(new Kernel(width, width, getFilter(width)), ConvolveOp.EDGE_ZERO_FILL, null)
       blurOp.filter(tmp, null.asInstanceOf[BufferedImage])
     } else {
       tmp    
