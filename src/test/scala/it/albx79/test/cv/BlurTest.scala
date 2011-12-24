@@ -17,15 +17,15 @@ class BlurTest {
    */
   @Test
   def testAllKernelSum1 = {
-//    Array(CV.getFilter(_), CV.getCircularKernel(_)) foreach testKernelSum1(_)
+    Array(CV.getFilter(_), CV.getCircularKernel(_)) foreach (f => testKernelSum1(f))
   }
   
   def testKernelSum1(krnl : Int => Array[Float]) = {
-//    List(2, 3, 4, 5, 10, 20, 50, 100) foreach { width =>
-//      val kernel = krnl(width)
-//      val sum = kernel.reduceLeft(_ + _)
-//      assertTrue(sum<1.01)
-//      assertTrue(sum>0.99)
-//    }
+    List(2, 3, 4, 5, 10, 20, 50, 100) foreach { width =>
+      val kernel = krnl(width)
+      val sum = kernel.reduceLeft(_ + _)
+      assertTrue(sum<1.01)
+      assertTrue(sum>0.99)
+    }
   }
 }
